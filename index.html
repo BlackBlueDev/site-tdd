@@ -6,7 +6,7 @@
   <title>Igreja Tabernáculo de Davi | Casa de Oração - Caruaru, Pernambuco</title>
   
   <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Portal Oficial da Igreja Tabernáculo de Davi - Casa de Oração em Caruaru, Pernambuco. Culto de Cura e Libertação às quartas 19h30 e Culto Principal da Família aos domingos 18h.">
+  <meta name="description" content="Portal Oficial da Igreja Tabernáculo de Davi - Casa de Oração em Caruaru, Pernambuco. Culto de Oração às segundas 19h30, Cura e Libertação às quartas 19h30 e Culto Principal da Família aos domingos 18h.">
   <meta name="keywords" content="Igreja Tabernáculo de Davi, Casa de Oração, Caruaru, Salgado, Pastor Erivonaldo Teixeira, Pastora Marta Teixeira, cultos evangélicos, caixa de promessas, cura e libertação">
   <meta name="author" content="Igreja Tabernáculo de Davi">
   <meta name="theme-color" content="#0a1128">
@@ -26,46 +26,6 @@
 <body>
 
   <!-- ========================================================================
-       TOP BAR (Notification, Live Service Countdown & Quick Links)
-       ======================================================================== -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <span class="live-badge">
-          <span class="live-dot"></span>
-          Casa de Oração
-        </span>
-        <div class="countdown-box">
-          <strong id="next-service-label">Próximo Culto:</strong>
-          <span class="countdown-timer" id="countdown-display">Calculando...</span>
-        </div>
-      </div>
-
-      <div class="top-bar-right">
-        <a href="#localizacao" class="top-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          Salgado, Caruaru - PE
-        </a>
-        <a href="#promessas" class="top-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-          Caixa de Promessas
-        </a>
-        <div class="top-socials">
-          <a href="https://instagram.com" target="_blank" class="top-social-icon" title="Instagram" aria-label="Instagram">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" class="top-social-icon" title="YouTube" aria-label="YouTube">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-          </a>
-          <a href="https://facebook.com" target="_blank" class="top-social-icon" title="Facebook" aria-label="Facebook">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
        MAIN HEADER & DESKTOP NAVIGATION
        ======================================================================== -->
   <header class="main-header">
@@ -82,12 +42,70 @@
       <nav class="desktop-nav" aria-label="Navegação Principal">
         <a href="#inicio" class="nav-link active">Início</a>
         <a href="#sobre" class="nav-link">Quem Somos</a>
-        <a href="#pastores" class="nav-link">Pastores</a>
         <a href="#ministerios" class="nav-link">Ministérios</a>
-        <a href="#cultos" class="nav-link">Cultos & Agenda</a>
-        <a href="#promessas" class="nav-link">Promessas</a>
-        <a href="#doacoes" class="nav-link">Doações / PIX</a>
         <a href="#localizacao" class="nav-link">Localização</a>
+
+        <!-- Sandwich Menu (Os três tracinhos) para Pastores, Promessas, Doações/PIX e Redes Sociais -->
+        <div class="nav-more-wrapper" id="nav-more-dropdown">
+          <button class="nav-more-btn" id="btn-nav-more" aria-expanded="false" aria-label="Mais opções de menu" title="Mais opções">
+            <span class="nav-more-text">Mais</span>
+            <div class="nav-sandwich-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="nav-more-dropdown-menu" id="nav-more-menu" role="menu">
+            <a href="#pastores" class="nav-more-link" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <div>
+                <strong>Corpo Pastoral</strong>
+                <small>Pastores Erivonaldo e Marta</small>
+              </div>
+            </a>
+            <a href="#promessas" class="nav-more-link" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <div>
+                <strong>Caixa de Promessas</strong>
+                <small>Palavra bíblica para o seu dia</small>
+              </div>
+            </a>
+            <a href="#doacoes" class="nav-more-link" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              <div>
+                <strong>Doações / PIX</strong>
+                <small>Semeadura e dízimos</small>
+              </div>
+            </a>
+
+            <div class="nav-more-divider"></div>
+            <div class="nav-more-section-title">Redes Sociais & YouTube</div>
+
+            <a href="https://www.youtube.com/@tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="nav-more-link nav-more-social" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              <div>
+                <strong>Canal no YouTube</strong>
+                <small>@tabernaculodedavioficial ↗</small>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/tddsede/" target="_blank" rel="noopener noreferrer" class="nav-more-link nav-more-social" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <div>
+                <strong>Instagram Oficial</strong>
+                <small>@tddsede ↗</small>
+              </div>
+            </a>
+
+            <a href="https://www.facebook.com/tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="nav-more-link nav-more-social" role="menuitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <div>
+                <strong>Facebook Oficial</strong>
+                <small>@tabernaculodedavioficial ↗</small>
+              </div>
+            </a>
+          </div>
+        </div>
       </nav>
 
       <!-- Action Buttons -->
@@ -150,6 +168,21 @@
     <div class="mobile-drawer-actions">
       <a href="#cultos" class="btn btn-outline-gold btn-lg">Conhecer os Cultos</a>
       <a href="#doacoes" class="btn btn-primary-gold btn-lg">Semear com PIX</a>
+    </div>
+
+    <div class="mobile-drawer-socials">
+      <span class="drawer-socials-title">Redes Sociais Oficiais</span>
+      <div class="top-socials">
+        <a href="https://www.instagram.com/tddsede/" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="Instagram @tddsede" aria-label="Instagram @tddsede">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.youtube.com/@tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="YouTube @tabernaculodedavioficial" aria-label="YouTube @tabernaculodedavioficial">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </a>
+        <a href="https://www.facebook.com/tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="Facebook @tabernaculodedavioficial" aria-label="Facebook @tabernaculodedavioficial">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -219,8 +252,8 @@
       <!-- Hero Key Stats -->
       <div class="hero-stats-row">
         <div class="stat-item">
-          <span class="stat-number">2 Cultos</span>
-          <span class="stat-label">Quartas 19h30 & Domingos 18h</span>
+          <span class="stat-number">3 Cultos</span>
+          <span class="stat-label">Segundas, Quartas & Domingos</span>
         </div>
         <div class="stat-item">
           <span class="stat-number">8</span>
@@ -245,22 +278,7 @@
     <div class="container">
       <div class="channels-grid">
         
-        <!-- Channel 1: Caixa de Promessas -->
-        <div class="channel-card">
-          <div class="channel-header">
-            <div class="channel-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            </div>
-            <h3 class="channel-title">Caixa de Promessas</h3>
-          </div>
-          <p class="channel-desc">Receba uma palavra bíblica para edificar e confortar a sua vida espiritual hoje.</p>
-          <a href="#promessas" class="channel-action-link">
-            Tirar Minha Palavra
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- Channel 2: Nossos Cultos -->
+        <!-- Channel 1: Nossos Cultos -->
         <div class="channel-card">
           <div class="channel-header">
             <div class="channel-icon-wrap">
@@ -268,7 +286,7 @@
             </div>
             <h3 class="channel-title">Nossos Cultos</h3>
           </div>
-          <p class="channel-desc">Quartas às 19h30 (Cura e Libertação) e Domingos às 18h00 (Culto Principal).</p>
+          <p class="channel-desc">Segundas e Quartas às 19h30, e Domingos às 18h00.</p>
           <a href="#cultos" class="channel-action-link">
             Ver Horários
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -392,6 +410,43 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- ========================================================================
+           VÍDEO DA HISTÓRIA DA IGREJA ("COMO TUDO COMEÇOU")
+           ======================================================================== -->
+      <div class="church-history-card">
+        <div class="history-video-embed-box" id="church-history-player">
+          <img src="assets/images/sobre/o-inicio-video-thumb.jpg" alt="Documentário: O Início do Tabernáculo de Davi" class="history-video-thumb" id="history-thumb-img">
+          <div class="history-video-badge-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Vídeo Oficial
+          </div>
+          <button class="history-video-play-trigger" id="btn-play-church-history" aria-label="Dar Play no Vídeo: O Início">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </button>
+        </div>
+
+        <div class="history-video-content">
+          <div class="history-video-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            História da Igreja • Como Tudo Começou
+          </div>
+          <h4 class="history-video-title">O Início: A Trajetória do Tabernáculo de Davi</h4>
+          <p class="history-video-desc">
+            Assista ao vídeo especial do nosso canal contando o início da igreja, como Deus levantou este altar de adoração e oração contínua em Caruaru e a trajetória de fidelidade à Sua Palavra.
+          </p>
+          <div class="history-video-actions">
+            <button class="btn btn-primary-gold btn-sm" id="btn-play-history-action">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Dar Play no Vídeo
+            </button>
+            <a href="https://www.youtube.com/watch?v=xFh8gIsuPLg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Assistir no YouTube ↗
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Versículos-Chave Oficiais em Destaque -->
@@ -551,14 +606,14 @@
         <!-- Pastora Marta Teixeira -->
         <div class="pastor-card">
           <div class="pastor-img-wrapper">
-            <span class="pastor-role-badge">Pastora & Líder de Mulheres</span>
+            <span class="pastor-role-badge">Pastora & Líder das Guardiãs da Fé</span>
             <img src="assets/images/pastores/pastora-marta-teixeira.png" alt="Pastora Marta Teixeira">
           </div>
           <div class="pastor-info-box">
             <h3 class="pastor-name">Pastora Marta Teixeira</h3>
-            <div class="pastor-subtitle">Pastora da Igreja & Líder do Ministério de Mulheres</div>
+            <div class="pastor-subtitle">Pastora da Igreja & Líder do Ministério Guardiãs da Fé</div>
             <p class="pastor-bio">
-              Mulher de oração e conselheira de famílias, líder do Ministério de Mulheres. Seu ministério tem sido canal de edificação de lares e fortalecimento espiritual para as famílias da nossa congregação em Caruaru.
+              Mulher de oração e conselheira de famílias, líder do ministério Guardiãs da Fé. Seu ministério tem sido canal de edificação de lares e fortalecimento espiritual para as famílias da nossa congregação em Caruaru.
             </p>
             <a href="https://api.whatsapp.com/send?phone=5581999999999&text=Olá,%20graça%20e%20paz%20Pastora%20Marta%20Teixeira!" target="_blank" class="btn btn-outline-gold btn-sm pastor-contact-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
@@ -617,10 +672,10 @@
         <div class="dept-card" data-category="familia">
           <div class="dept-img-wrap">
             <span class="dept-category-tag">Família</span>
-            <img src="assets/images/departamentos/casais.png" alt="Ministério de Casais" loading="lazy">
+            <img src="assets/images/departamentos/casais.png" alt="Rede de Casais" loading="lazy">
           </div>
           <div class="dept-body">
-            <h3 class="dept-title">Ministério de Casais</h3>
+            <h3 class="dept-title">Rede de Casais</h3>
             <p class="dept-desc">Fortalecendo alianças, acolhendo famílias e promovendo a edificação de lares no padrão divino.</p>
             <div class="dept-footer">
               <a href="#" class="dept-btn-more" data-dept="casais">
@@ -635,10 +690,10 @@
         <div class="dept-card" data-category="familia">
           <div class="dept-img-wrap">
             <span class="dept-category-tag">Mulheres & Oração</span>
-            <img src="assets/images/departamentos/mulheres.jpeg" alt="Departamento de Mulheres" loading="lazy">
+            <img src="assets/images/departamentos/mulheres.jpeg" alt="Guardiãs da Fé" loading="lazy">
           </div>
           <div class="dept-body">
-            <h3 class="dept-title">Ministério de Mulheres</h3>
+            <h3 class="dept-title">Guardiãs da Fé</h3>
             <p class="dept-desc">Mulheres valorosas e dedicadas à oração que buscam a presença do Senhor e edificam seus lares.</p>
             <div class="dept-footer">
               <a href="#" class="dept-btn-more" data-dept="mulheres">
@@ -653,10 +708,10 @@
         <div class="dept-card" data-category="servico">
           <div class="dept-img-wrap">
             <span class="dept-category-tag">Serviço & Amor</span>
-            <img src="assets/images/departamentos/diaconato.jpeg" alt="Departamento Diaconato" loading="lazy">
+            <img src="assets/images/departamentos/diaconato.jpeg" alt="Diaconato" loading="lazy">
           </div>
           <div class="dept-body">
-            <h3 class="dept-title">Diaconato & Hospitalidade</h3>
+            <h3 class="dept-title">Diaconato</h3>
             <p class="dept-desc">Servindo com amor, honra e acolhimento para que cada visitante seja recebido com carinho na Casa de Deus.</p>
             <div class="dept-footer">
               <a href="#" class="dept-btn-more" data-dept="diaconato">
@@ -671,10 +726,10 @@
         <div class="dept-card" data-category="geracao">
           <div class="dept-img-wrap">
             <span class="dept-category-tag">Crianças</span>
-            <img src="assets/images/departamentos/kids.png" alt="Tabernáculo Kids" loading="lazy">
+            <img src="assets/images/departamentos/kids.png" alt="Departamento Infantil" loading="lazy">
           </div>
           <div class="dept-body">
-            <h3 class="dept-title">Tabernáculo Kids</h3>
+            <h3 class="dept-title">Departamento Infantil</h3>
             <p class="dept-desc">Ensinando as verdades eternas às crianças com amor, alegria e fidelidade bíblica em todas as reuniões.</p>
             <div class="dept-footer">
               <a href="#" class="dept-btn-more" data-dept="kids">
@@ -744,81 +799,61 @@
   </section>
 
   <!-- ========================================================================
-       AGENDA SEMANAL DE CULTOS (Apenas 2 Cultos Oficiais)
+       AGENDA SEMANAL DE CULTOS (3 Cultos Oficiais Semanais)
        ======================================================================== -->
   <section class="schedule-section section-padding" id="cultos">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Programação de Fé</span>
         <h2 class="section-title">Nossos Cultos Oficiais</h2>
-        <p class="section-desc">Reunimo-nos em dois cultos semanais para adorar ao Senhor, buscar cura, libertação e comunhão com a família de Deus em Caruaru.</p>
+        <p class="section-desc">Reunimo-nos em três cultos semanais para orar, adorar ao Senhor, buscar cura, libertação e comunhão com a família de Deus em Caruaru.</p>
         <div class="divider-gold"></div>
       </div>
 
       <div class="schedule-grid">
         
-        <!-- Culto 1: Domingo Noite (Destaque Principal) -->
-        <div class="service-card featured" style="padding: 2.5rem 2rem;">
-          <div class="service-day-badge">Domingo • Culto Principal</div>
-          <div class="service-time">
+        <!-- Culto 1: Segunda-feira Noite -->
+        <div class="service-card" style="padding: 2.25rem 1.75rem; border: 1.5px solid var(--color-border-gold); background: #ffffff;">
+          <div class="service-day-badge" style="color: var(--color-secondary-dark);">Segunda-feira • Início de Semana</div>
+          <div class="service-time" style="color: var(--color-primary);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            18h00
+            19h30
           </div>
-          <h3 class="service-name" style="font-size: 1.45rem;">Grande Culto Principal da Família & Celebração</h3>
-          <p class="service-desc" style="font-size: 0.95rem; line-height: 1.65;">
-            O principal encontro de adoração, louvor congregacional e proclamação da Palavra de Deus para toda a igreja e famílias de Caruaru. Ministração pastoral, comunhão fraterna e acolhimento infantil.
+          <h3 class="service-name" style="font-size: 1.35rem;">Culto de Oração</h3>
+          <p class="service-desc" style="font-size: 0.92rem; line-height: 1.6;">
+            Encontro fervoroso consagrado à oração, clamor pelas famílias e busca profunda pela presença do Espírito Santo para consagrar a semana diante do Senhor.
           </p>
-          <div class="service-tag" style="margin-top: 1rem;">Domingo às 18h00 • Acolhimento Tabernáculo Kids</div>
+          <div class="service-tag" style="background: rgba(203, 163, 88, 0.15); color: var(--color-secondary-dark); margin-top: 1rem;">Segunda-feira às 19h30 • Clamor & Intercessão</div>
         </div>
 
         <!-- Culto 2: Quarta-feira Noite -->
-        <div class="service-card" style="padding: 2.5rem 2rem; border: 1.5px solid var(--color-border-gold); background: #ffffff;">
+        <div class="service-card" style="padding: 2.25rem 1.75rem; border: 1.5px solid var(--color-border-gold); background: #ffffff;">
           <div class="service-day-badge" style="color: var(--color-accent);">Quarta-feira • Meio de Semana</div>
           <div class="service-time" style="color: var(--color-primary);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             19h30
           </div>
-          <h3 class="service-name" style="font-size: 1.45rem;">Culto de Cura e Libertação</h3>
-          <p class="service-desc" style="font-size: 0.95rem; line-height: 1.65;">
+          <h3 class="service-name" style="font-size: 1.35rem;">Culto de Cura e Libertação</h3>
+          <p class="service-desc" style="font-size: 0.92rem; line-height: 1.6;">
             Culto consagrado à oração de fé, clamor pelas causas difíceis, libertação espiritual e cura de enfermos pelo poder e autoridade de Jesus Cristo. Venha receber a sua vitória.
           </p>
-          <div class="service-tag" style="background: rgba(185, 28, 28, 0.08); color: var(--color-accent); margin-top: 1rem;">Quarta-feira às 19h30 • Altar de Oração e Milagres</div>
+          <div class="service-tag" style="background: rgba(185, 28, 28, 0.08); color: var(--color-accent); margin-top: 1rem;">Quarta-feira às 19h30 • Oração de Fé & Milagres</div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       TRANSMISSÃO AO VIVO & VÍDEOS OFICIAIS
-       ======================================================================== -->
-  <section class="media-section section-padding" id="transmissao">
-    <div class="container">
-      <div class="section-header" style="color: #ffffff;">
-        <span class="section-tag" style="color: var(--color-secondary-light);">Canal Oficial</span>
-        <h2 class="section-title" style="color: #ffffff;">Transmissão Ao Vivo & Mensagens</h2>
-        <p class="section-desc" style="color: #cbd5e1;">Acompanhe as ministrações da Palavra e louvores da Igreja Tabernáculo de Davi de onde você estiver.</p>
-        <div class="divider-gold"></div>
-      </div>
-
-      <div class="media-single-box">
-        <div class="live-player-box">
-          <div class="video-mockup-wrapper">
-            <button class="btn-play-pulse" id="btn-play-stream" aria-label="Assistir Transmissão Oficial">
-              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            </button>
+        <!-- Culto 3: Domingo Noite (Destaque Principal) -->
+        <div class="service-card featured" style="padding: 2.25rem 1.75rem;">
+          <div class="service-day-badge">Domingo • Culto Principal</div>
+          <div class="service-time">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            18h00
           </div>
-          <div class="live-player-bar">
-            <div class="live-info">
-              <h4>Transmissão Oficial Tabernáculo de Davi</h4>
-              <p>Cultos Oficiais: Quartas às 19h30 e Domingos às 18h00</p>
-            </div>
-            <a href="https://youtube.com" target="_blank" class="btn btn-accent btn-sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-              Canal Oficial no YouTube
-            </a>
-          </div>
+          <h3 class="service-name" style="font-size: 1.35rem;">Grande Culto Principal da Família & Celebração</h3>
+          <p class="service-desc" style="font-size: 0.92rem; line-height: 1.6;">
+            O principal encontro de adoração, louvor congregacional e proclamação da Palavra de Deus para toda a igreja e famílias de Caruaru. Ministração pastoral e comunhão fraterna.
+          </p>
+          <div class="service-tag" style="margin-top: 1rem;">Domingo às 18h00 • Acolhimento Departamento Infantil</div>
         </div>
+
       </div>
     </div>
   </section>
@@ -944,7 +979,8 @@
                 </div>
                 <div>
                   <strong style="color: var(--color-primary); display: block; font-size: 1rem;">Dias e Horários de Cultos:</strong>
-                  <span style="color: var(--color-text-muted); font-size: 0.9rem;">
+                  <span style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; display: block;">
+                    • <strong>Segunda-feira às 19h30:</strong> Culto de Oração<br>
                     • <strong>Quarta-feira às 19h30:</strong> Culto de Cura e Libertação<br>
                     • <strong>Domingo às 18h00:</strong> Grande Culto Principal da Família
                   </span>
@@ -964,14 +1000,14 @@
           </div>
 
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="https://www.google.com/maps/place/R.+Herculano+Cordeiro,+294+-+Salgado,+Caruaru+-+PE,+55020-330/@-8.2777463,-35.9598983,76m/data=!3m1!1e3!4m6!3m5!1s0x7a98bcb26b1c17b:0xfaadbf3217510c7a!8m2!3d-8.277767!4d-35.9597735!16s%2Fg%2F11g9vhy_sx?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary-gold btn-sm">Abrir no Google Maps</a>
+            <a href="https://maps.app.goo.gl/a6okiDz3HhYg58sq8" target="_blank" rel="noopener noreferrer" class="btn btn-primary-gold btn-sm">Abrir no Google Maps</a>
             <a href="https://waze.com/ul?ll=-8.277767,-35.9597735&navigate=yes" target="_blank" class="btn btn-outline-gold btn-sm">Abrir no Waze</a>
           </div>
         </div>
 
         <!-- Google Maps Embed com Coordenadas Exatas -->
         <div class="location-map-wrap">
-          <iframe title="Localização da Igreja Tabernáculo de Davi no Google Maps" src="https://maps.google.com/maps?q=-8.277767,-35.9597735&hl=pt-BR&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe title="Localização da Igreja Tabernáculo de Davi no Google Maps" src="https://maps.google.com/maps?q=-8.277767,-35.9597735+(Igreja+Tabern%C3%A1culo+de+Davi+-+Casa+de+Ora%C3%A7%C3%A3o)&hl=pt-BR&z=18&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
       </div>
@@ -1029,19 +1065,27 @@
           </p>
 
           <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.25rem;">
-            <strong>Cultos:</strong> Quarta às 19h30 e Domingo às 18h00
+            <strong>Cultos:</strong> Segunda às 19h30, Quarta às 19h30 e Domingo às 18h00
           </div>
 
-          <div class="top-socials">
-            <a href="https://instagram.com" target="_blank" class="top-social-icon" title="Instagram" aria-label="Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://youtube.com" target="_blank" class="top-social-icon" title="YouTube" aria-label="YouTube">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" class="top-social-icon" title="Facebook" aria-label="Facebook">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
+          <div class="footer-social-wrapper" style="margin-top: 1.25rem;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem;">Redes Sociais Oficiais</div>
+            <div class="top-socials" style="margin-bottom: 0.75rem;">
+              <a href="https://www.instagram.com/tddsede/" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="Instagram @tddsede" aria-label="Instagram @tddsede">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://www.youtube.com/@tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="YouTube @tabernaculodedavioficial" aria-label="YouTube @tabernaculodedavioficial">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://www.facebook.com/tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" class="top-social-icon" title="Facebook @tabernaculodedavioficial" aria-label="Facebook @tabernaculodedavioficial">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+            </div>
+            <div style="font-size: 0.8rem; color: #94a3b8; line-height: 1.6;">
+              <div>Instagram: <a href="https://www.instagram.com/tddsede/" target="_blank" rel="noopener noreferrer" style="color: var(--color-secondary-light); text-decoration: none;">@tddsede</a></div>
+              <div>YouTube: <a href="https://www.youtube.com/@tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" style="color: var(--color-secondary-light); text-decoration: none;">@tabernaculodedavioficial</a></div>
+              <div>Facebook: <a href="https://www.facebook.com/tabernaculodedavioficial" target="_blank" rel="noopener noreferrer" style="color: var(--color-secondary-light); text-decoration: none;">@tabernaculodedavioficial</a></div>
+            </div>
           </div>
         </div>
 

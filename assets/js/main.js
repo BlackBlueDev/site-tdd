@@ -5,13 +5,13 @@
  */
 
 function initAll() {
-  initCountdown();
   initPromisesBox();
   initDepartmentFilter();
   initDepartmentModal();
   initPixCopy();
   initNavigation();
   initSearch();
+  initHistoryVideo();
 }
 
 if (document.readyState === 'loading') {
@@ -21,7 +21,7 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================================================
-   1. CONTAGEM REGRESSIVA PARA O PRÓXIMO CULTO (Apenas 2 Cultos na Semana)
+   1. CONTAGEM REGRESSIVA PARA O PRÓXIMO CULTO (3 Cultos Semanais)
    ========================================================================== */
 function initCountdown() {
   const timerDisplay = document.getElementById('countdown-display');
@@ -29,11 +29,13 @@ function initCountdown() {
   if (!timerDisplay) return;
 
   // Cultos oficiais da igreja:
-  // 0 = Domingo: 18:00 (Culto Principal da Família)
+  // 1 = Segunda-feira: 19:30 (Culto de Oração)
   // 3 = Quarta-feira: 19:30 (Culto de Cura e Libertação)
+  // 0 = Domingo: 18:00 (Grande Culto Principal da Família)
   const schedule = [
-    { day: 0, hour: 18, min: 0, title: 'Domingo às 18h: Grande Culto Principal da Família' },
-    { day: 3, hour: 19, min: 30, title: 'Quarta-feira às 19h30: Culto de Cura e Libertação' }
+    { day: 1, hour: 19, min: 30, title: 'Segunda-feira às 19h30: Culto de Oração' },
+    { day: 3, hour: 19, min: 30, title: 'Quarta-feira às 19h30: Culto de Cura e Libertação' },
+    { day: 0, hour: 18, min: 0, title: 'Domingo às 18h: Grande Culto Principal da Família' }
   ];
 
   function getNextServiceDate() {
@@ -237,47 +239,47 @@ const departmentData = {
     subtitle: 'Altar de Adoração e Louvor',
     verse: '1 Crônicas 16:4',
     desc: 'O Ministério de Louvor tem a nobre missão de ministrar diante da Arca da Aliança e conduzir toda a congregação à presença do Senhor. Inspirados no modelo de adoração e consagração do rei Davi, nossos levitas e músicos dedicam seus dons com integridade e excelência espiritual nos cultos da igreja.',
-    meetings: 'Atuação nos cultos de Quarta-feira às 19h30 e Domingo às 18h00, além de ensaios ministeriais agendados.',
+    meetings: 'Atuação nos cultos de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00, além de ensaios ministeriais agendados.',
     contact: 'Coordenação do Ministério de Louvor, sob a liderança do Pastor Erivonaldo Teixeira e da Pastora Marta Teixeira.'
   },
   'casais': {
-    name: 'Ministério de Casais',
+    name: 'Rede de Casais',
     subtitle: 'Famílias Fortes e Alianças Restauradas',
     verse: 'Efésios 5:31',
-    desc: 'Cremos que a família é um projeto santo do coração de Deus. O Ministério de Casais promove acolhimento aos cônjuges, edificação matrimonial, aconselhamento à luz das Escrituras Sagradas e comunhão fraterna.',
-    meetings: 'Participação ativa nos cultos de Quarta-feira às 19h30 e Domingo às 18h00, com encontros periódicos de casais.',
+    desc: 'Cremos que a família é um projeto santo do coração de Deus. A Rede de Casais promove acolhimento aos cônjuges, edificação matrimonial, aconselhamento à luz das Escrituras Sagradas e comunhão fraterna.',
+    meetings: 'Participação ativa nos cultos de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00, com encontros periódicos de casais.',
     contact: 'Liderança de Famílias, com apoio do Pastor Erivonaldo Teixeira e da Pastora Marta Teixeira.'
   },
   'mulheres': {
-    name: 'Ministério de Mulheres',
+    name: 'Guardiãs da Fé',
     subtitle: 'Mulheres Virtuosas e Consagradas',
     verse: 'Provérbios 31:29-30',
     desc: 'Mulheres consagradas à oração, ao estudo edificante da Bíblia Sagrada e ao cuidado com as famílias. Promovemos acolhimento espiritual, comunhão e apoio mútuo a todas as irmãs da igreja e da comunidade em Caruaru.',
-    meetings: 'Presença viva nos cultos de Quarta-feira às 19h30 e Domingo às 18h00, além de círculos de comunhão.',
+    meetings: 'Presença viva nos cultos de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00, além de círculos de comunhão.',
     contact: 'Coordenação oficial da Pastora Marta Teixeira.'
   },
   'diaconato': {
-    name: 'Diaconato e Hospitalidade',
+    name: 'Diaconato',
     subtitle: 'Servir com Excelência, Honra e Amor Cristão',
     verse: '1 Timóteo 3:13',
     desc: 'O Diaconato expressa o verdadeiro coração de servo de Jesus Cristo. Responsável pelo acolhimento caloroso de cada membro e visitante que chega ao templo, pela organização solene da Santa Ceia e pelo suporte aos cultos da igreja.',
-    meetings: 'Escala oficial durante os cultos de Quarta-feira às 19h30 e Domingo às 18h00.',
+    meetings: 'Escala oficial durante os cultos de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00.',
     contact: 'Corpo Diaconal, sob orientação pastoral da Igreja Tabernáculo de Davi.'
   },
   'kids': {
-    name: 'Tabernáculo Kids',
+    name: 'Departamento Infantil',
     subtitle: 'Ensinando a Criança no Caminho da Verdade',
     verse: 'Provérbios 22:6',
     desc: 'Ambiente seguro, bíblico e afetuoso onde crianças aprendem a Palavra de Deus com amor e atividades cristãs adequadas para cada idade, enquanto os pais adoram a Deus no templo.',
-    meetings: 'Salas abertas com acolhimento infantil nos cultos de Domingo às 18h00 e Quarta-feira às 19h30.',
-    contact: 'Coordenação Pedagógica do Tabernáculo Kids.'
+    meetings: 'Salas abertas com acolhimento infantil nos cultos de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00.',
+    contact: 'Coordenação Pedagógica do Departamento Infantil.'
   },
   'midia': {
     name: 'Mídia e Comunicação',
     subtitle: 'Proclamando as Boas Novas da Salvação',
     verse: 'Marcos 16:15',
     desc: 'Equipe de comunicação, sonorização, iluminação e transmissão digital responsável por divulgar o evangelho e as celebrações da Casa de Oração com clareza e dedicação.',
-    meetings: 'Atuação técnica durante todos os cultos oficiais: Quarta-feira às 19h30 e Domingo às 18h00.',
+    meetings: 'Atuação técnica durante todos os cultos oficiais: Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00.',
     contact: 'Equipe de Comunicação e Tecnologia da Igreja.'
   },
   'jovem': {
@@ -285,7 +287,7 @@ const departmentData = {
     subtitle: 'Juventude Apaixonada por Jesus e Pura em Santidade',
     verse: '1 Timóteo 4:12',
     desc: 'Movimento de jovens e adolescentes comprometidos com a Palavra de Deus, vivendo em santidade, comunhão fraterna e testemunho cristão.',
-    meetings: 'Participação unida nos cultos oficiais de Domingo às 18h00 e Quarta-feira às 19h30.',
+    meetings: 'Participação unida nos cultos oficiais de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00.',
     contact: 'Liderança do Renova Jovem e Liderança Pastoral.'
   },
   'teatro': {
@@ -293,7 +295,7 @@ const departmentData = {
     subtitle: 'A Arte a Serviço da Proclamação do Reino de Deus',
     verse: 'Salmo 150:6',
     desc: 'Representações bíblicas e expressões dramáticas que anunciam o amor de Jesus Cristo e a mensagem da redenção com sensibilidade e impacto visual.',
-    meetings: 'Apresentações durante as celebrações oficiais de Domingo às 18h00 e Quarta-feira às 19h30.',
+    meetings: 'Apresentações durante as celebrações oficiais de Segunda-feira às 19h30, Quarta-feira às 19h30 e Domingo às 18h00.',
     contact: 'Coordenação de Artes Cênicas da Igreja.'
   }
 };
@@ -426,6 +428,35 @@ function initNavigation() {
     document.body.style.overflow = '';
   }
 
+  // Desktop "Mais" sandwich dropdown
+  const moreDropdown = document.getElementById('nav-more-dropdown');
+  const moreBtn = document.getElementById('btn-nav-more');
+  const moreMenu = document.getElementById('nav-more-menu');
+
+  if (moreBtn && moreDropdown) {
+    moreBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = moreDropdown.classList.toggle('active');
+      moreBtn.setAttribute('aria-expanded', String(isActive));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!moreDropdown.contains(e.target)) {
+        moreDropdown.classList.remove('active');
+        moreBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    if (moreMenu) {
+      moreMenu.querySelectorAll('.nav-more-link').forEach(link => {
+        link.addEventListener('click', () => {
+          moreDropdown.classList.remove('active');
+          moreBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }
+
   // Active section observer
   const sections = document.querySelectorAll('section[id]');
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link');
@@ -472,14 +503,16 @@ function initSearch() {
   if (!searchBtn || !searchModal || !searchInput) return;
 
   const siteIndex = [
-    { title: "Horários dos Cultos e Agenda", anchor: "#cultos", desc: "Quarta-feira às 19h30 (Culto de Cura e Libertação) e Domingo às 18h00 (Culto Principal da Família)." },
+    { title: "Horários dos Cultos e Agenda", anchor: "#cultos", desc: "Segunda-feira às 19h30 (Culto de Oração), Quarta-feira às 19h30 (Culto de Cura e Libertação) e Domingo às 18h00 (Culto Principal da Família)." },
     { title: "Quem Somos, Missão e Visão", anchor: "#sobre", desc: "Conheça a história e a identidade bíblica da Igreja Tabernáculo de Davi - Casa de Oração." },
     { title: "Os 9 Valores Fundamentais", anchor: "#valores", desc: "Adoração extravagante, evangelismo intencional, presença de Deus e integridade bíblica." },
     { title: "Pastor Erivonaldo Teixeira e Pastora Marta Teixeira", anchor: "#pastores", desc: "Liderança pastoral e ministério da Igreja Tabernáculo de Davi em Caruaru." },
-    { title: "Ministérios e Departamentos", anchor: "#ministerios", desc: "Casais, Mulheres, Louvor, Diaconato, Tabernáculo Kids, Mídia, Renova Jovem e Teatro." },
+    { title: "Ministérios e Departamentos", anchor: "#ministerios", desc: "Rede de Casais, Guardiãs da Fé, Louvor, Diaconato, Departamento Infantil, Mídia, Renova Jovem e Teatro." },
     { title: "Caixa de Promessas Bíblicas", anchor: "#promessas", desc: "Receba uma palavra inspiradora da Bíblia Sagrada para a sua vida." },
     { title: "Dízimos, Ofertas e Contribuição PIX", anchor: "#doacoes", desc: "Contribuição transparente para o sustento da igreja e missões." },
-    { title: "Localização e Endereço Oficial", anchor: "#localizacao", desc: "Rua Herculano Cordeiro, 294, Salgado, Caruaru - PE, CEP: 55020-330 (próximo à Escola Arnaldo Assunção)." }
+    { title: "Localização e Endereço Oficial", anchor: "#localizacao", desc: "Rua Herculano Cordeiro, 294, Salgado, Caruaru - PE, CEP: 55020-330 (próximo à Escola Arnaldo Assunção)." },
+    { title: "Vídeo: O Início e História da Igreja", anchor: "#sobre", desc: "Assista ao relato em vídeo de como Deus iniciou a Igreja Tabernáculo de Davi em Caruaru." },
+    { title: "Redes Sociais Oficiais e YouTube", anchor: "#sobre", desc: "Instagram (@tddsede), YouTube (@tabernaculodedavioficial) e Facebook oficial." }
   ];
 
   searchBtn.addEventListener('click', () => {
@@ -547,4 +580,34 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 4000);
+}
+
+/* ==========================================================================
+   9. VÍDEO HISTÓRICO DA IGREJA ("COMO TUDO COMEÇOU")
+   ========================================================================== */
+function initHistoryVideo() {
+  const playerContainer = document.getElementById('church-history-player');
+  const playTrigger = document.getElementById('btn-play-church-history');
+  const actionPlayBtn = document.getElementById('btn-play-history-action');
+  const thumbImg = document.getElementById('history-thumb-img');
+
+  const youtubeVideoId = 'xFh8gIsuPLg';
+  const iframeHtml = `
+    <iframe 
+      src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&rel=0&modestbranding=1" 
+      title="O Início - Igreja Tabernáculo de Davi" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen 
+      style="width: 100%; height: 100%; border: none; display: block; border-radius: var(--border-radius-md);">
+    </iframe>
+  `;
+
+  function startVideo() {
+    if (!playerContainer) return;
+    playerContainer.innerHTML = iframeHtml;
+  }
+
+  if (playTrigger) playTrigger.addEventListener('click', startVideo);
+  if (thumbImg) thumbImg.addEventListener('click', startVideo);
+  if (actionPlayBtn) actionPlayBtn.addEventListener('click', startVideo);
 }

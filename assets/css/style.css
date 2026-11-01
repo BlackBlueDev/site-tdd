@@ -123,103 +123,7 @@ ul, ol {
   padding-right: 1.5rem;
 }
 
-/* ==========================================================================
-   TOP BAR & SERVICE COUNTDOWN NOTIFICATION
-   ========================================================================== */
-
-.top-bar {
-  background: #060b1b;
-  color: #e2e8f0;
-  font-size: 0.84rem;
-  border-bottom: 1px solid rgba(203, 163, 88, 0.2);
-  position: relative;
-  z-index: 100;
-}
-
-.top-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  gap: 1rem;
-}
-
-.top-bar-left {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--color-accent);
-  color: #fff;
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--border-radius-full);
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.live-dot {
-  width: 7px;
-  height: 7px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 rgba(255, 255, 255, 0.7);
-  animation: pulse-live 1.6s infinite;
-}
-
-@keyframes pulse-live {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-}
-
-.countdown-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #cbd5e1;
-}
-
-.countdown-box strong {
-  color: var(--color-secondary-light);
-  font-weight: 600;
-}
-
-.countdown-timer {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.15rem 0.6rem;
-  border-radius: var(--border-radius-sm);
-  font-family: monospace;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.05em;
-}
-
-.top-bar-right {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.top-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #e2e8f0;
-  transition: color var(--transition-fast);
-}
-
-.top-link:hover {
-  color: var(--color-secondary-light);
-}
-
+/* Social Icons Utility (Footer & Drawer) */
 .top-socials {
   display: flex;
   align-items: center;
@@ -242,15 +146,6 @@ ul, ol {
   background: var(--color-secondary);
   color: var(--color-primary-dark);
   transform: translateY(-2px);
-}
-
-@media (max-width: 900px) {
-  .top-bar-right {
-    display: none;
-  }
-  .top-bar-inner {
-    justify-content: center;
-  }
 }
 
 /* ==========================================================================
@@ -356,6 +251,162 @@ ul, ol {
 
 .nav-link:hover::after, .nav-link.active::after {
   width: 100%;
+}
+
+/* Desktop Sandwich More Dropdown */
+.nav-more-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.45rem 0.95rem;
+  background: rgba(203, 163, 88, 0.12);
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--border-radius-full);
+  color: var(--color-secondary-light);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.nav-more-btn:hover,
+.nav-more-wrapper.active .nav-more-btn {
+  background: var(--color-secondary);
+  color: #0a1128;
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgba(212, 160, 23, 0.4);
+}
+
+.nav-sandwich-icon {
+  width: 14px;
+  height: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-sandwich-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.nav-more-wrapper.active .nav-sandwich-icon span:nth-child(1) {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.nav-more-wrapper.active .nav-sandwich-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-more-wrapper.active .nav-sandwich-icon span:nth-child(3) {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.nav-more-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  min-width: 270px;
+  background: rgba(10, 17, 40, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--border-radius-lg);
+  padding: 0.65rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-fast);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-more-wrapper.active .nav-more-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-more-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 0.95rem;
+  border-radius: var(--border-radius-md);
+  color: #f1f5f9;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  background: transparent;
+}
+
+.nav-more-link:hover {
+  background: rgba(203, 163, 88, 0.15);
+  color: var(--color-secondary-light);
+  transform: translateX(4px);
+}
+
+.nav-more-link svg {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.nav-more-link:hover svg {
+  transform: scale(1.15);
+}
+
+.nav-more-link div {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-more-link strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.nav-more-link small {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.nav-more-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.35rem 0.5rem;
+}
+
+.nav-more-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary-light);
+  padding: 0.35rem 0.95rem 0.2rem;
+}
+
+.nav-more-social svg {
+  color: var(--color-secondary-light);
+}
+
+.nav-more-social:hover {
+  background: rgba(203, 163, 88, 0.2);
 }
 
 .header-actions {
@@ -582,6 +633,28 @@ ul, ol {
   flex-direction: column;
   gap: 0.85rem;
   margin-top: auto;
+}
+
+.mobile-drawer-socials {
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.drawer-socials-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary-light);
+}
+
+.mobile-drawer-socials .top-socials {
+  display: flex;
+  gap: 0.6rem;
 }
 
 /* ==========================================================================
@@ -824,8 +897,10 @@ ul, ol {
 
 .channels-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .channel-card {
@@ -1285,6 +1360,163 @@ ul, ol {
 }
 
 /* ==========================================================================
+   VÍDEO INSTITUCIONAL / HISTÓRICO ("Como Tudo Começou")
+   ========================================================================== */
+.church-history-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--border-radius-xl);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.church-history-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.history-video-embed-box {
+  flex: 0 0 340px;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: #060b1b;
+  box-shadow: 0 4px 14px rgba(10, 17, 40, 0.12);
+}
+
+.history-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.church-history-card:hover .history-video-thumb {
+  transform: scale(1.03);
+}
+
+.history-video-play-trigger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(10, 17, 40, 0.88);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  box-shadow: 0 0 16px rgba(212, 160, 23, 0.35);
+  z-index: 2;
+}
+
+.history-video-play-trigger:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--color-secondary);
+  color: #0a1128;
+  border-color: #ffffff;
+  box-shadow: 0 0 24px rgba(212, 160, 23, 0.6);
+}
+
+.history-video-play-trigger svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
+
+.history-video-badge-pill {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(10, 17, 40, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.history-video-badge-pill svg {
+  color: #ff0000;
+}
+
+.history-video-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-video-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-secondary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.4rem;
+}
+
+.history-video-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.history-video-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.15rem;
+}
+
+.history-video-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .church-history-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  .history-video-embed-box {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
    PASTORES & CORPO PASTORAL
    ========================================================================== */
 
@@ -1575,9 +1807,9 @@ ul, ol {
 
 .schedule-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 980px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1677,7 +1909,8 @@ ul, ol {
 
 @media (max-width: 992px) {
   .schedule-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 580px;
   }
 }
 
