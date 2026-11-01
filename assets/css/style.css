@@ -2041,25 +2041,38 @@ ul, ol {
 }
 
 .pix-qr-img {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   margin: 0 auto 1.5rem;
   background: #ffffff;
-  padding: 12px;
+  padding: 8px;
   border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pix-qr-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--border-radius-sm);
 }
 
 .pix-key-display {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.85rem 1.25rem;
-  border-radius: var(--border-radius-sm);
-  font-family: monospace;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--color-secondary-light);
-  word-break: break-all;
+  color: #ffffff;
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  text-align: center;
 }
 
 .bank-info-table {
@@ -2094,6 +2107,30 @@ ul, ol {
   .donation-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .donation-card-box {
+    padding: 1.5rem 1rem;
+  }
+  .pix-box {
+    padding: 1.5rem 1rem;
+  }
+  .pix-key-display {
+    padding: 0.85rem 0.75rem;
+  }
+  .pix-key-display strong {
+    font-size: 0.95rem !important;
+    word-break: break-word;
+  }
+  .pix-key-display span {
+    font-size: 0.82rem !important;
+    word-break: break-all;
+  }
+  #btn-copy-pix {
+    font-size: 0.88rem;
+    padding: 0.75rem 1rem;
   }
 }
 

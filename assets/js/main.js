@@ -358,35 +358,41 @@ function initDepartmentModal() {
 }
 
 /* ==========================================================================
-   5. DÍZIMOS E OFERTAS - COPIAR CHAVE PIX
+   5. DÍZIMOS E OFERTAS - COPIAR CÓDIGO PIX (COPIA E COLA)
    ========================================================================== */
 function initPixCopy() {
   const copyBtn = document.getElementById('btn-copy-pix');
-  const pixKeyEl = document.getElementById('pix-key-val');
-
-  if (!copyBtn || !pixKeyEl) return;
+  if (!copyBtn) return;
 
   copyBtn.addEventListener('click', () => {
-    const key = pixKeyEl.textContent.trim();
+    const pixCode = copyBtn.getAttribute('data-pix-code') || "00020126490014BR.GOV.BCB.PIX0127erivonaldo.lima@hotmail.com5204000053039865802BR5925ERIVONALDO TEIXEIRA DE LI6009SAO PAULO6226052276qb7A6du2tMyfzCldJzyR63046CF3";
+    
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(key).then(() => {
-        showToast("✅ Chave PIX copiada com sucesso! Deus abençoe sua semeadura.");
+      navigator.clipboard.writeText(pixCode).then(() => {
+        showToast("✅ Código PIX Copia e Cola copiado com sucesso! Deus abençoe sua semeadura.");
       }).catch(() => {
-        fallbackCopy(key);
+        fallbackCopy(pixCode);
       });
     } else {
-      fallbackCopy(key);
+      fallbackCopy(pixCode);
     }
   });
 
   function fallbackCopy(text) {
-    const tempInput = document.createElement('input');
+    const tempInput = document.createElement('textarea');
     tempInput.value = text;
+    tempInput.setAttribute('readonly', '');
+    tempInput.style.position = 'fixed';
+    tempInput.style.opacity = '0';
     document.body.appendChild(tempInput);
     tempInput.select();
-    document.execCommand('copy');
+    try {
+      document.execCommand('copy');
+      showToast("✅ Código PIX Copia e Cola copiado com sucesso! Deus abençoe sua semeadura.");
+    } catch (err) {
+      showToast("❌ Erro ao copiar. Tente novamente.");
+    }
     document.body.removeChild(tempInput);
-    showToast("✅ Chave PIX copiada com sucesso! Deus abençoe sua semeadura.");
   }
 }
 
